@@ -1,0 +1,118 @@
+---
+title: "Circles of Mobility"
+subtitle: "Travel Survey Data for Predicting Mobility Behaviours"
+
+author: "Clara Peiret-García"
+date: "03-10-2024"
+format:
+  revealjs:
+    theme: default
+    logo: logos.png  # Path to your logo
+    css: style.css         # Link to your custom CSS file
+    
+project:
+  type: website
+  output-dir: docs
+---
+
+
+## Contents
+
+::: incremental
+-   **The aim**: Deriving profiles from data
+
+-   **The theory**: Circles of Mobility
+
+-   **The data**: The Dutch National Travel Survey
+
+-   **The clusters**: From individuals to groups
+
+-   **The model**: Predicting behaviours
+
+-   **The app**: A decision-making tool 
+
+-   **Conclusions**
+:::
+
+## The aim
+
+*To estimate the probability of an individual presenting a mobility profile based on their personal characteristics, and the characteristics of their neighbourhood.*
+
+[We employ **travel survey** data to generate **mobility profiles**, and estimate a **statistical model** to predict cluster belonging based on individual and environmental factors.]{.fragment}
+
+[We aim for this research to assist policy-makers and planners with new methods and data in order to implement transport policies targeted at specific population groups.]{.fragment}
+
+## The theory
+
+![[*Circles of Mobility. We consider factors at four different levels: individual, household, neighbourhood, and region.*]{style="font-size: 14px;"}](circles_of_influence.png){fig-align="center" width="900"}
+
+## The data
+
+-   **Onderweg in Nederland** - Dutch national travel survey
+
+    ::: incremental
+    -   Participants record their **daily movements**, **transport modes**, **trip purposes** and **duration**.
+
+    -   The data incorporates **demographic information** at individual and household levels.
+
+    -   We derive neighbourhood and regional information from each individual's **postcode**.
+    :::
+
+## The data
+
+::: {style="font-size: 20px;"}
+| Person ID | Trip code | Distance | Transport mode | Destination | Purpose | Activity duration | Age | Gender | Income level |
+|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+| 1 | T001 | 5 km | Bus | Office | Work | 8 hours | 35 | Male | Medium |
+| 2 | T002 | 10 km | Car | Mall | Shopping | 2 hours | 28 | Female | High |
+| 3 | T003 | 3 km | Walking | Park | Leisure | 1 hour | 22 | Male | Low |
+| 4 | T004 | 8 km | Bicycle | Gym | Exercise | 1.5 hours | 30 | Female | Medium |
+| 4 | T005 | 15 km | Train | Station | Commute | 45 minutes | 30 | Female | Medium |
+| 5 | T006 | 12 km | Car | Restaurant | Dinner | 2 hours | 27 | Female | High |
+| 6 | T007 | 2 km | Bus | School | Education | 6 hours | 18 | Male | Low |
+| 7 | T008 | 7 km | Walking | Supermarket | Groceries | 30 minutes | 55 | Female | Medium |
+:::
+
+## The clusters
+
+::: incremental
+-   Using just mobility-related variables, we extract mobility-behaviour profiles.
+
+-   We employ a machine learning algorithm to group individuals based on how similar their behaviours are.
+
+-   We identify five clusters: Students, Workers, Work-life balance, Walkers, and Active life
+:::
+
+## The clusters
+
+![](cluster_radars.png){width="1300"}
+
+## The model
+
+::: incremental
+-   **Statistical model** to predict the probability of a person belonging to the different clusters.
+
+-   We consider **characteristics at four levels**: individual, household, neighbourhood, and regional.
+
+-   We provide a probability (with a confidence interval) of a person with XYZ characteristics **belonging to a specific cluster**.
+:::
+
+## The app
+
+![](app_image.png)
+
+## Conclusions
+
+::: incremental
+-   Our work employs travel survey data to generate mobility profiles and estimate behaviours based on four factors: individual, household, neighbourhood, and region.
+
+-   We estimate the likelihood of an individual with XYZ characteristics of belonging to a specific mobility profile.
+
+-   This study is fully reproducible in other contexts, given the availability of similar data.
+
+-   This study hopes to assist policy-makers with data-driven modelling derived from high spatial resolution mobility data.
+:::
+
+# Thank you
+
+c.peiret-garcia2@newcastle.ac.uk
